@@ -1,0 +1,61 @@
+---
+#--- Basic Information ---#
+course:       "Electrical Circuits 1"
+coursenumber: 2250
+semester:     Fall
+year:         2025
+
+description: |
+  Fundamentals of electrical circuits including the concepts of voltage,
+  charge, and current. Principles of basic electrical components: voltage and current
+  sources, resistors, capacitors and inductors. Analysis of resistor networks; equivalent
+  source transformations; switch-response of resistor-capacitor and resistor-inductor
+  circuits.
+prereq:
+  - 'Math 2250 or equivalent'
+
+#--- Instructor Info ---#
+instructor: "Chris Winstead"
+office:     EL 152
+contact:    Contact via Canvas Messaging
+officehours:
+  - 'M, W, R: 1--2pm'
+  - Walk-ins welcome
+  - Appointments also work
+
+#--- Institution ---#
+department:  ECE
+institution: Utah State University
+
+#--- Schedule Details ---#
+startdate: '8/25/2025'
+classtime: 'MWF 10:30--11:20AM'
+location:  'ENGR 106'
+labsections:
+  - {sec: 501, day: Tuesday, starttime: '7:30AM', endtime: '10:15AM'}
+  - {sec: 502, day: Tuesday, starttime: '10:30AM', endtime: '1:15PM'}
+  - {sec: 503, day: Thursday, starttime: '1:30PM', endtime: '4:15PM'}
+  - {sec: 504, day: Thursday, starttime: '4:30PM', endtime: '7:15PM'}
+labroom: 'EL 104C'
+
+#--- Resources ---#
+website:
+  - 'http://canvas.usu.edu'
+ta:
+  - Listed in Canvas
+
+#--- Textbook and Required Materials ---#
+texttitle: 'Electric Circuits, 11th Ed.'
+textauthor:
+  - James W. Nilsson
+  - Susan Reidel
+textpublisher: Pearson
+textyear: 2019
+materials:
+  - Scientific calculator
+  - Lab materials (see lab assignments)
+software:
+  - EveryCircuit web simulator (class license key will be provided)
+
+...
+
