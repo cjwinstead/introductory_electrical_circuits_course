@@ -1,0 +1,29 @@
+---
+description: 'Node Voltage Method' 
+figure: "`node_voltage_circuit`{=latex}"
+points: 22
+statement: |
+   In this problem you will use the node-voltage method to solve
+   the voltages and currents in the circuit. 
+   Given values: $V_{S1}=\SI{4}{\volt}$,
+   $I_{S2}=\SI{1}{\milli\ampere}$, $R_1=\SI{1}{\kilo\ohm}$,
+   $g=\SI{250}{\micro\siemens}$.
+   Complete each of the sub-questions below.
+parts:
+  - question: |
+       Using Ohm's Law and KCL, write the node-voltage equation at node B.
+       You equation should only contain given values and $v_B$.
+    solution: |
+       $\left(V_{S1}-v_B\right)/R_1 + I_{S2} = gv_B$
+       or $\left(V_{S1}-v_B\right)G_1 + I_{S2} = gv_B$
+  - question: |
+       Solve an equation for $v_B$.
+    solution: |
+       $v_B = \frac{V_{S1}G_1 + I_{S2}}{G_1 + g}$
+  - question: |
+       Calculate numerical values for $v_B$, $i_1$, and $gv_B$.
+       Perform at least one numerical consistency check.
+    solution: |
+       $v_B=\SI{4}{\volt}$, $i_1=\SI{0}{\ampere}$, $gv_B=\SI{1}{\milli\ampere}$.
+       Consistency check: $v_B = V_{S1}-i_1R_1 = V_{S1} = \SI{4}{\volt}$.       
+...

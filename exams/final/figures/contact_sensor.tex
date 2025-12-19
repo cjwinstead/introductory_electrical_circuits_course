@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+  \draw (0,0) node[anchor=south] (a) {A} to[R=10<\kilo\ohm>,v=$v_{AB}$] ++(0,-2) coordinate
+  (b) node[anchor=south west,xshift=0.2cm] {B} (b) to[R=100<\kilo\ohm>,v=$v_{BC}$] ++(0,-2) node[anchor=north] (c) {C};
+
+  \draw (b) to[short,*-o] ++(2,0) coordinate (fp) -- ++(2,0) node[anchor=north] (bp) {$+$};
+  \draw (c.north) to[short,*-o] ++(2,0) coordinate (fn) -- ++(2,0) node[anchor=south] (bn) {$-$};
+  \node at ($(bp)!0.5!(bn)$) {Output};
+  \draw (fp) to[R=$R_C$,*-*] (fn);
+
+  \draw (c.north) -- ++(-2,0) coordinate (g) to[voltage source, l=5V] (g |-
+  a.south) -- (a.south);
+\end{tikzpicture}

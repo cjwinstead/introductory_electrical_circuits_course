@@ -1,0 +1,54 @@
+---
+description: 'Source Transformation'
+points: 26
+figure: "`source_transformation_circuit`{=latex}"
+statement: |
+   In this problem you will use a source transformation to solve the circuit shown below.
+   Given values: $V_{S1}=\SI{4}{\volt}$,
+   $I_{S2}=\SI{1}{\milli\ampere}$, $R_1=\SI{1}{\kilo\ohm}$,
+   $R_2=\SI{4}{\kilo\ohm}$.
+   Complete each of the sub-questions below.
+
+parts:
+  - question: |
+      Consider the left side of the circuit containing just $V_{S1}$ and $R_1$
+      between node $B$ and ground. 
+      Determine the open-circuit voltage of this subcircuit.
+    solution: |
+      $V_{oc} = V_{S1}$
+  - question: |
+      Consider again the left-side sub-circuit 
+      between node $B$ and ground. 
+      Determine the Thevenin equivalent resistance of this subcircuit.
+    solution: |
+      $R_\text{Th} = R_1$
+  - question: |
+      Transform the left-side subcircuit into a Norton equivalent subcircuit
+      connected between node $B$ and ground. Draw the complete circuit after
+      the transformation. Also write an expression for the current source.
+    solution: |
+      $I_{S1} = \frac{V_{S1}}{R_1}=\SI{4}{\milli\ampere}$
+      ```{=latex}
+      \begin{tikzpicture}
+        \draw (0,0) node[ground] (g1) {} to[current source,l=$I_{S1}$] ++(0,2)
+        -- ++(2,0) coordinate (b)
+        to[R,l=$R_1$] ++(0,-2) node[ground] (g2){}
+        (b) to[short,*-o] ++(1,0) coordinate (trm) node[anchor=south,blue] {B}
+        (g1) to[short,*-*] (g2) to[short,-o] (g2 -| trm);
+      \end{tikzpicture}
+      ```
+  - question: |
+      Simplify the transformed circuit if possible and solve for $v_B$.
+    solution: |
+      $v_B = \left(I_{S1}+I_{S2}\right)\left(R_1 \parallel R_2\right) = \SI{4}{\volt}$
+      
+      ```{=latex}
+      \begin{tikzpicture}
+        \draw (0,0) node[ground] (g1) {} to[current source,l=$I_{S1}+I_{S2}$] ++(0,2)
+        -- ++(2,0) coordinate (b)
+        to[R,l=$R_1\parallel R_2$] ++(0,-2) node[ground] (g2){}
+        (b) to[short,*-o] ++(1,0) coordinate (trm) node[anchor=south,blue] {B}
+        (g1) to[short,*-*] (g2) to[short,-o] (g2 -| trm);
+      \end{tikzpicture}
+      ```      
+...

@@ -1,0 +1,36 @@
+---
+description: 'Mesh Currents Method' 
+figure: "`mesh_currents_circuit`{=latex}"
+points: 22
+statement: |
+   In this problem you will use the mesh-currents method to solve
+   the voltages in the circuit.
+   This circuit has two meshes, indicated by the currents
+   $i_\alpha$ and $i_\beta$. Given values: $V_{S1}=\SI{4}{\volt}$,
+   $I_{S2}=\SI{1}{\milli\ampere}$, $R_1=\SI{1}{\kilo\ohm}$,
+   $k=\SI{4000}{\volt/\ampere}$.
+   Complete each of the sub-questions below.
+parts:
+  - question: |
+      Consider a supermesh surrounding the two voltage sources and $R_1$. Write the
+      KVL equation.
+    solution: |
+       $V_{S1} + i_\alpha R_1 = ki_\beta$
+  - question: |
+      Consider how the mesh currents relate to the current source at node $B$.
+      Use KCL to solve an expression for $i_\beta$ in terms of $i_\alpha$ and
+      $I_{S2}$.
+    solution: |
+       $i_\beta = I_{S2} - i_\alpha$
+  - question: |
+       Substitute for $i_\beta$ in the supermesh equation and solve
+       an equation for $i_\alpha$. Simplify as much as possible.
+    solution: |
+       $i_\alpha = \frac{kI_{S2} - V_{S1}}{R_1 + k}$
+  - question: |
+       Calculate the numerical values for $i_\alpha$, $i_\beta$, and $v_B$. Perform
+       at least one numerical consistency check.
+    solution: |
+       $i_\alpha=0$, $i_\beta=I_{S2}=\SI{1}{\milli\ampere}$, $v_B=V_{S1}=\SI{4}{\volt}$.
+       Consistency check: $ki_\beta=4000\times \SI{1}{\milli\ampere}=\SI{4}{\volt}$.
+...

@@ -1,0 +1,74 @@
+---
+description: 'Capacitors and Inductors'
+points: 40
+statement: |
+  These problems deal with capacitors and inductors in various
+  configurations. 
+parts:
+# --------- Supercapacitor ------------------------
+  - question: |
+      A 100F supercapacitor is charged to an initial voltage of
+      27V. One terminal of the capacitor is connected to ground as
+      shown. Suppose you grab the other terminal (node A) with your
+      hand while your bare foot is standing on the ground. The
+      grabbing occurs at time zero, and is illustrated schematically
+      by a switch. If your
+      body has a resistance of $\SI{1}{\kilo\ohm}$, what will be the
+      peak current passing through you? How long will it take for the
+      current to drop to a "safe" level of 10mA?
+    figure: "`supercapacitor.tex`{=latex}"
+    solution: |
+       The peak current is at time zero, equal to 27mA. In order to
+       drop to 10mA, the RC circuit must discharge 63% of the
+       capacitor's charge. This happens in $\tau=RC=10^5$ seconds, or
+       1,667 minutes, about 27.8 hours.
+# --------- Charge ------------------------
+  - question: |-
+      Suppose the same amount of charge, $Q=1$ **pico Coulomb**, is stored
+      in three different capacitors. For each case, calculate the
+      voltage across the capacitor and the energy stored in the
+      capacitor.      
+      * $\SI{1}{\pico\farad}$
+      * $\SI{1}{\nano\farad}$
+      * $\SI{1}{\micro\farad}$      
+      $~$      
+    solution: |
+      Since capacitance is Coulombs per Volt, we have $V=Q/C$. Then
+      the energy is $\frac{1}{2}CV^2$ or $\frac{1}{2}Q^2/C$. For the
+      three cases:
+      * $V=Q/C = 1$V, $E=0.5$pJ
+      * $V = 1$mV, $E=0.5$fJ
+      * $V = 1\mu$V, $E=0.5$aJ
+# --------- Switched Inductor ------------------------
+  - question: |
+      In this circuit, the switch is initially closed, so that $R_1$
+      and $R_2$ are connected in parallel. At time $t=0$, the switch
+      is opened, so that only $R_2$ is connected across the
+      inductor. What is the voltage $v_B$ just after switching at
+      time $t=0$? **Recall that the current in an inductor cannot
+      change instantaneously.**
+    figure: "`switched_inductor.tex`{=latex}"
+    solution: |
+      Prior to time zero, the total current is $i_\ell = 1/(10) +
+      1/1000) = \SI{0.101}{\ampere}$. When the switch opens, the
+      current doesn't change instantly, so it's still
+      $\SI{0.101}{\ampere}$. All the current flows through $R_2$
+      yielding a voltage $i_\ell R_2 = \SI{101}{\volt}$. 
+# --------- Steady State ------------------------
+  - question: |
+      This circuit is operating at steady-state. No signals are
+      changing. Determine every voltage and current.
+    figure: "`steady_state.tex`{=latex}"
+    solution: |
+      Node A is forced by the voltage source so
+      $v_a=\SI{1}{\volt}$. At steady-state, the inductor acts like a
+      short-circuit, so $v_C=v_A=\SI{1}{\volt}$, and
+      $i_1=v_C/R_1=\SI{1}{\milli\ampere}$. The capacitor acts like an
+      open-circuit, so $i_3=0$, therefore $R_2$ and $R_4$ act like a
+      series combination equal to $\SI{1}{\kilo\ohm}$, so
+      $i_2=i_4=\SI{1}{\milli\ampere}$. To detemine $v_B$, notice that
+      $R_2$ and $R_4$ form a voltage divider with equal resistors, so
+      $v_B=v_A/2=\SI{0.5}{\volt}$. Lastly, since $i_3=0$ there is no
+      voltage change across $R_3$, so
+      $v_D=v_B=\SI{0.5}{\volt}$.  
+...

@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+
+  \node[fill=white] at (0,3) {~};
+  
+  \draw (0,0) node[ground] {} to[C=100<\farad>,v>=27<\volt>] ++(0,2) -- ++(-1,0)
+  to[closing switch] ++(-2,0) to[R=1<\kilo\ohm>,f=$i_\text{you}$] ++(0,-2) node[ground] {};
+\end{tikzpicture}

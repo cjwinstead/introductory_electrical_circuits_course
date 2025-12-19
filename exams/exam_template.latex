@@ -1,0 +1,104 @@
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+
+\renewcommand{\contentsname}{Scores}
+
+\usepackage{xcolor}
+\usepackage{amsmath}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,shapes.geometric,shapes.symbols,arrows,intersections,calc,decorations,}
+
+\usepackage[american,old voltage direction,siunitx]{circuitikz}
+\ctikzset{bipoles/length=1cm}
+\ctikzset{nodes width=0.075}
+\ctikzset{tripoles/american nand port/circle width=0.25}
+\ctikzset{tripoles/pmos style/emptycircle}
+
+\usepackage{pgfplots}
+\usepackage{enumitem}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \null
+  {\large $department$~$coursenumber$ \hfill $course$,~\@date}
+  \vskip 4em%
+  \begin{center}%
+  \let \footnote \thanks
+    {\LARGE \@title \par}%
+  \end{center}%
+  \par
+  \vskip 4em
+  }
+\makeatother
+
+
+\title{$title$}
+\date{$semester$, $year$}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{$title$}
+\fancyhead[R]{$course$, $semester$, $year$}
+\fancyfoot[L]{Instructor: $instructor$}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand*{\contentsline}[3]{\csname l@#1\endcsname{#2}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+
+
+\newcommand{\inv}[1]{\frac{1}{#1}}
+
+\begin{document}
+
+\maketitle
+
+\Huge Name:
+
+\vspace{1cm}
+
+\Huge A-Number: 
+
+\normalsize
+
+\newpage
+
+\tableofcontents
+
+\vspace{4cm}
+
+{\large \bf TOTAL SCORE: }
+
+$body$
+
+
+
+

@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+   \node[ground] at (0,0) (g1) {};
+   \draw (g1)  to[R,l=$R_1$,f<=$i_1$] ++(0,2) coordinate (va)
+    to[voltage source,l=$V_{S1}$] ++(2.8,0) -- ++(0.2,0) coordinate (vb)
+%   (vc) to[R,l=$R_3$,f>_=$i_a$] (vc |- g1) node[ground] (g2) {}
+   (vb) to[short,*-] ++(3,0) coordinate (vd)
+    (vb) to[R=$R_2$,f>=$i_2$] ++(0,-2) node[ground] (g3) {}
+    (vd)   to[current source,invert,l=$I_{S2}$] ++(0,-2) node[ground] (g2) {}; %coordinate (vc) 
+
+
+   \node[blue,anchor=south] at (va) {A};
+   \node[blue,anchor=south] at (vb) {B};
+
+\end{tikzpicture}

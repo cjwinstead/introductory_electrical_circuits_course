@@ -1,0 +1,24 @@
+\begin{tikzpicture}[>=triangle 45]
+  \node[circle,draw=black,inner sep=0, minimum width=0.5cm] at (0,0) (head) {};
+  \draw (head.south) -- ++(0,-0.125) coordinate (neck)
+  (neck) -- ++(-0.25,0) coordinate (leftshoulder)
+  (neck) -- ++(0.25,0) coordinate (rightshoulder)
+  (leftshoulder) -- ++(-0.3,-0.3) coordinate (leftelbow)
+  (rightshoulder) -- ++(0.3,-0.3) coordinate (rightelbow)
+  (leftelbow) -- ++(-0.4,-0.2) coordinate (leftwrist)
+  (rightelbow) -- ++(0.4,-0.2) coordinate (rightwrist)
+  (neck) -- ++(0,-0.5) coordinate (waist)
+  (waist) -- ++(-0.125,0) coordinate (lefthip)
+  (waist) -- ++(0.125,0) coordinate (righthip)
+  (lefthip) -- ++(-0.3,-0.4) coordinate (leftknee)
+  (righthip) -- ++(0.3,-0.4) coordinate (rightknee)
+  (leftknee) -- ++(0.3,-0.4) coordinate (leftankle)
+  (rightknee) -- ++(-0.3,-0.4) coordinate (rightankle)
+  (leftankle) -- ++(-0.2,-0.05) coordinate (leftfoot)
+  (rightankle) -- ++(0.2,-0.05) coordinate (rightfoot);
+
+  \draw (leftwrist) to[short,o-] ++(-1,0) node[anchor=east,blue] {A};
+  \draw (rightwrist) to[short,o-] ++(1,0) node[anchor=west,blue] {B};
+  \draw[ultra thick,red,->] ($(leftshoulder)+(-0.125,-0.125)$) -- ++(1,0);
+  \node[anchor=west,red] at ($(rightshoulder)+(0.3,0.013)$) {$I$};
+\end{tikzpicture}

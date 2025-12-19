@@ -1,0 +1,55 @@
+\begin{tikzpicture}
+  
+\coordinate (A) at (0,0);
+\coordinate (B) at (2.5,0);
+\coordinate (C) at (2.5,-2.5);
+\coordinate (D) at (0,-2.5);
+\coordinate (E) at (2.5,-5);
+\coordinate (F) at (0,-5);
+
+\draw (A) to[R=$R$] (B)
+      (B) to[R=$R$] (C)
+      (C) to[short,*-*] (D);
+
+
+\foreach \x in {A,B,C,D} {
+  \node[anchor=south east,blue] at (\x) {\x};
+};
+
+\draw (D) to[short,*-] ++(-1.5,0) coordinate (g) node[ground] {}
+to[voltage source,l=$V_S$] (g
+|- A) to[short,-*] (A);
+
+\node[anchor=west] at (B) {$v_B = \SI{2}{\volt}$};
+
+\node at (4,-2.5) {$\Rightarrow$};
+
+\coordinate (A) at (8,0);
+\coordinate (B) at (10,0);
+\coordinate (C) at (10,-2.5);
+\coordinate (Bb) at (11,0);
+\coordinate (Cc) at (11,-2.5);
+\coordinate (D) at (8,-2.5);
+\coordinate (E) at (10,-5);
+\coordinate (F) at (8,-5);
+
+\draw (A) to[R=$R$] (B)
+      (B) to[R=$R$] (C)
+      (C) to[short,*-*] (D);
+
+
+\draw (C) to[short,*-] ++(1,0) coordinate (Cc)
+(B) to[short,*-] ++(1,0) coordinate (Bb)
+(Cc) to[current source,l_=$I$] (Bb);
+
+\foreach \x in {A,B,C,D} {
+  \node[anchor=south east,blue] at (\x) {\x};
+};
+
+\draw (D) to[short,*-] ++(-1.5,0) coordinate (g) node[ground] {}
+to[voltage source,l=$V_S$] (g
+|- A) to[short,-*] (A);
+
+\node[anchor=south] at (Bb) {$v_B =$ ?};
+
+\end{tikzpicture}

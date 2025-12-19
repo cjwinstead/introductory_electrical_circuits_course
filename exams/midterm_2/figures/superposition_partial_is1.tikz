@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+   \node[ground] at (0,0) (g1) {};
+   \draw (g1) to[R,l=$R_1$,f<=$i_{11}$] ++(0,2) coordinate (va)
+   (va) -- ++(2,0) coordinate (vaa)
+   (vaa) to[current source,invert,l=$I_{S1}$] ++(0,-2) node[ground] (g2) {}
+   (vaa) to[short,*-] ++(2,0) to[R,l=$R_2$,f>_=$i_{21}$] ++(0,-2) coordinate (vb)   
+   node[ground] (g3) {};
+   
+
+   \node[blue,anchor=south] at (va) {B1};
+   \node[blue,anchor=south west] at (vb) {A1};
+
+\end{tikzpicture}

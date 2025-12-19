@@ -1,0 +1,32 @@
+\newpage
+
+$if(description)$
+\section* {$description$}
+\addcontentsline{toc}{section}{$description$ \hfill /$points$}
+$else$
+\section* ~
+$endif$
+
+$statement$
+
+$if(figure)$
+\begin{center}
+\input{figures/$figure$.tikz}
+\end{center}
+$endif$
+
+
+
+$if(parts)$
+\begin{enumerate}[label=(\alph*),itemsep=5cm]
+
+$for(parts)$
+$if(parts.newpage)$\newpage$endif$
+\item $if(parts.label)$\label{$parts.label$}$endif$ $parts.question$\\
+$if(parts.figure)$\input{figures/$parts.figure$}$endif$
+
+$endfor$
+\end{enumerate}
+$endif$
+
+\vspace{5cm}

@@ -1,0 +1,23 @@
+---
+description: 'Current divider with three resistors.'
+figure: "`current_divider_three`{=latex}"
+points: 20
+statement: |
+  The circuit shown has $R_1 = \SI{100}{\ohm}$, 
+  $R_2 = \SI{200}{\ohm}$, and $R_3 = \SI{500}{\ohm}$.
+  The current source delivers $\SI{100}{\milli\ampere}$.
+  Answer the questions below about this circuit.
+parts:
+  - question: |
+      Calculate the conductance of each resistor.
+    solution: |
+      $G_1 = \SI{0.01}{\siemens}$, $G_2 = \SI{0.005}{\siemens}$, $G_3 = \SI{0.002}{\siemens}$.
+  - question: |
+      Calculate the total equivalent resistance between nodes A and B.
+    solution: |
+      $R_\text{eq} = 1/(G_1+G_2+G_3) = \SI{58.824}{\ohm}$
+  - question: |
+      Calculate the voltage produced between nodes A and B.
+    solution: |
+      $V_{AB}=i_SR_\text{eq} = \SI{5.8824}{\volt}.$
+...

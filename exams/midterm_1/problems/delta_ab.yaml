@@ -1,0 +1,24 @@
+---
+description: 'Circuit with two branches'
+figure: '`delta_ab`{=latex}'
+points: 20
+statement: |
+  The circuit below contains three resistors connected in two
+  branches. The resistors are $R_1=\SI{3}{\kilo\ohm}$, $R_2 =
+  \SI{3}{\kilo\ohm}$, and $R_3=\SI{6}{\kilo\ohm}$. A voltage is
+  applied between nodes A and B, $v_{AB}=\SI{6}{\volt}$ (voltage
+  source not shown in the diagram).  Answer the questions that follow.
+parts:
+  - question: |
+      What is the total equivalent resistance between A and B?
+    solution: |
+      $\SI{3}{\kilo\ohm}$
+  - question: |
+      What are the branch currents $i_1$ and $i_3$?
+    solution: |
+      Both $\SI{1}{\milli\ampere}$
+  - question: |
+      What is the total current $i_s$?
+    solution: |
+      $\SI{2}{\milli\ampere}$
+...

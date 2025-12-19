@@ -1,0 +1,14 @@
+---
+description: 'Short title' 
+figure: "`filename`{=latex}"
+statement: |
+   Text of problem.
+parts:
+  - Subquestion A
+  - Subquestion B
+  - Subquestion C
+solutions:
+  - Solution A
+  - Solution B
+  - Solution C
+...

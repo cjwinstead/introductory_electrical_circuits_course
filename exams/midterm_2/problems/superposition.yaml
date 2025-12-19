@@ -1,0 +1,59 @@
+---
+description: 'Superposition'
+points: 30
+figure: "`superposition_circuit`{=latex}"
+statement: |
+   In this problem you will use the method of superposition to solve the circuit shown below.
+   Given values: $I_{S1}=\SI{4}{\milli\ampere}$,
+   $V_{S2}=\SI{4}{\volt}$, $R_1=\SI{1}{\kilo\ohm}$,
+   $R_2=\SI{4}{\kilo\ohm}$.
+   Complete each of the sub-questions below.
+
+parts:
+  - question: |
+      Draw the circuit for the partial solution associated with current source $I_{S1}$.
+    solution: |
+      First partial solution, set $V_{S2}=0$ (short circuit):
+        
+      `\input{figures/superposition_partial_is1.tikz}`{=latex}
+  - question: |
+      Solve an equation for the partial solution $v_{B1}$ (i.e. the contribution to $v_B$
+      associated with $I_{S1}$).
+    solution: |
+      $v_{B1} = I_{S1}R_1\parallel R_2 = \frac{I_{S1}R_1R_2}{R_1 + R_2}$
+  - question: |
+      Draw the circuit for the partial solution associated with voltage source $V_{S2}$.
+    solution: |
+      Second partial solution, set $I_{S1}=0$.
+      
+      `\input{figures/superposition_partial_vs2.tikz}`{=latex}
+  - question: |
+      Solve an equation for the partial solution $v_{B2}$ (i.e. the contribution to
+      $v_B$ associated with $V_{S2}$).
+    solution: |
+      Voltage divider: $v_{B2} = \frac{V_{S2}R_2}{R_1+R_2}$
+  - question: |
+      Add the partial solutions to obtain the combined solution, $v_B = v_{B1}+v_{B2}$.
+      Give your answer as an equation and simplify if possible.
+    solution: |
+      $v_B = \frac{I_{S1}R_1R_2 + V_{S2}R_2}{R_1+R_2}$
+  - question: |
+      Calculate final numerical values in the table below. Then perform at least
+      one numerical consistency check on the combined result.
+      
+      | Variable | Partial $I_{S1}$ | Partial $V_{S2}$ | Combined |
+      |----------|------------------|------------------|----------|
+      | $v_B$    |                  |                  |          |
+      | $i_1$    |                  |                  |          |
+      | $i_2$    |                  |                  |          |
+
+      .
+    solution: |
+      | Variable | Partial $I_{S1}$ | Partial $V_{S2}$ | Combined |
+      |----------|------------------|------------------|----------|
+      | $v_B$    | $16/5$ V         |  $4/5$ V         | 4 V      |
+      | $i_1$    | $(16/5)$ mA      |  $4/5$ mA        | 4 mA     |
+      | $i_2$    | $(4/5)$ mA       |  $-4/5$ mA       | 0        |
+
+      .
+...

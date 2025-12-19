@@ -1,0 +1,22 @@
+---
+description: 'Short title' 
+figure: "`filename`{=latex}" (optional)
+points: 0
+statement: |
+   Text of problem.
+parts:
+# --------- PART A ------------------------
+  - question: |
+      Subquestion A (markdown)
+    figure: "`filename`{=latex}" (optional)
+    label: crossreference_tag_A (optional)
+    solution: |
+      Solution A (markdown,optional)
+# --------- PART B ------------------------
+  - question: |
+      Subquestion B (markdown)
+    figure: "`filename`{=latex}" (optional)
+    label: crossreference_tag_B (optional)
+    solution: |
+      Solution B (markdown,optional)
+...

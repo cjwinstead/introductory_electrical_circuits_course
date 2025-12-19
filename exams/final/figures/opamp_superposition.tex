@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+  
+  \node[op amp,scale=2] at (0,0) (oa) {};
+
+  \draw (oa.-) to[short,*-] ++(0,1) coordinate (f)
+  (f) to[R=3<\kilo\ohm>] (f -| oa.out) to[short,-*] (oa.out)
+  (oa.-) to[R=1<\kilo\ohm>] ++(-1.5,0) node[anchor=east] {1V}
+  (oa.+) |- ++(-1,-1) node[anchor=east] {$-2$V}
+  (f-|oa.out) to[short,-*] (oa.out) to[short,-o] ++(1,0)
+  node[anchor=west] {$v_{\rm OUT}$} ;
+
+\end{tikzpicture}

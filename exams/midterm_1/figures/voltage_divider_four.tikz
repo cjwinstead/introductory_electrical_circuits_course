@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+  \coordinate (a) at (0,0);
+  \draw (a) node[anchor=east,blue] {A} -- ++(2,0)
+  to[R=$R_1$,v=$v_1$,f>^=$i_{R}$] ++(0,-3) coordinate (e) to[short,*-] ++(4,0) node[blue,anchor=west] {E}
+  (e) to[R=$R_2$,v=$v_2$] ++(0,-3) coordinate (d) to[short,*-] ++(3,0) node[blue,anchor=west] {D}
+  (d) to[R=$R_3$,v=$v_3$] ++(0,-3) coordinate (c) to[short,*-] ++(2,0) node[blue,anchor=west] {C}
+  (c) to[R=$R_4$,v=$v_4$] ++(0,-3)  to[short,-*] ++(-2,0) coordinate (b) node[anchor=east,blue] {B};
+
+  \draw (b) to[voltage source, l=$v_{AB}$] (a);
+  \draw (b) ++(0,-2) node[ground] (g) {} to[voltage source,l=$v_{BG}$] (b);
+\end{tikzpicture}

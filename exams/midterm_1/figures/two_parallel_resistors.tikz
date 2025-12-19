@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+  \node[anchor=east,blue] at (0,0) (a) {A};
+  \node[anchor=east,blue] at (0,-2) (b) {B};
+
+  \coordinate (rp0) at (a.east);
+  \coordinate (rn0) at (b.east);
+
+  \foreach \x in {1,2} {
+    \draw ($(a.east)+(2*\x,0)$) coordinate (rp\x) to[R=$R_\x$,f=$i_\x$] ($(b.east)+(2*\x,0)$) coordinate (rn\x);
+  }
+  \foreach \x/\y in {2/1} \draw (rp\x) to[short,-*] (rp\y) (rn\x) to[short,-*] (rn\y) ;
+  \draw (rp1) -- (rp0) (rn1)--(rn0);
+
+  \node[anchor=north] at (a.south) {$+$};
+  \node[anchor=south] at (b.north) {$-$};
+  \node at ($(a.south)!0.5!(b.north)$) {$v_{AB}$};
+\end{tikzpicture}

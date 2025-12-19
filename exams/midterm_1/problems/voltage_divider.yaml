@@ -1,0 +1,26 @@
+---
+description: 'Voltage divider with four resistors.'
+figure: "`voltage_divider_four`{=latex}"
+points: 20
+statement: |
+   The circuit should below has $v_{AB}=\SI{10}{\volt}$ and
+   $v_{BG} = \SI{1}{\volt}$. The resistor values are
+   $R_1 = \SI{4}{\kilo\ohm}$, $R_2 = \SI{2}{\kilo\ohm}$,
+   $R_3 = \SI{1}{\kilo\ohm}$, and $R_4 = \SI{3}{\kilo\ohm}$.
+   Answer the questions below about this circuit.
+parts:
+  - question: |
+      Calculate the current $i_R$ in the resistor branch.
+    solution: |
+      $i_R = \SI{10}{\volt}/\SI{10}{\kilo\ohm} = \SI{1}{\milli\ampere}$
+  - question: |
+      Calculate the voltage drop across each resistor, $v_1$, $v_2$,
+      $v_3$ and $v_4$.
+    solution: |
+      $v_1 = \SI{4}{\volt}$, $v_2 = \SI{2}{\volt}$, $v_3 = \SI{1}{\volt}$, $v_4 = \SI{3}{\volt}$.
+  - question: |
+      Calculate the voltages at nodes $C$, $D$, and $E$ relative to
+      the ground node $(G)$.
+    solution: |
+      $v_C = \SI{4}{\volt}$, $v_D = \SI{5}{\volt}$, $v_E = \SI{7}{\volt}$.
+...

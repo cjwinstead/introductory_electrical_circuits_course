@@ -1,0 +1,27 @@
+---
+description: 'Resistors in parallel'
+figure: '`four_parallel_resistors`{=latex}'
+points: 20
+statement: |
+   Four resistors are connected in parallel as shown. Answer the questions below. Resistor values are indicated separately in each sub-question.
+parts:
+  - question: |
+      What is the equivalent resistance if all resistors are equal to
+      $\SI{4}{\kilo\ohm}$?
+    solution: |
+      $\SI{1}{\kilo\ohm}$
+  - question: |
+      What is the equivalent resistance if $R_1=\SI{1}{\kilo\ohm}$,
+      $R_2=\SI{10}{\kilo\ohm}$, $R_3=\SI{100}{\kilo\ohm}$, and
+      $R_4=\SI{1}{\mega\ohm}$? Round your answer to the nearest
+      $\si{\kilo\ohm}$.
+    solution: |
+      $\SI{1}{\kilo\ohm}$
+  - question: |
+      What is the equivalent resistance if the *conductances* are $G_1
+      = \SI{300}{\micro\siemens}$, $G_2 = \SI{100}{\micro\siemens}$,
+      $G_3 = \SI{400}{\micro\siemens}$, and $G_4 =
+      \SI{200}{\micro\siemens}$?
+    solution: |
+      $\SI{1}{\kilo\ohm}$
+...

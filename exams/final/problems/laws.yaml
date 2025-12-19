@@ -1,0 +1,65 @@
+---
+description: 'The Laws: KVL, KCL, and Ohm' 
+points: 40
+statement: |
+   The problems below relate to the basic laws of electric circuits
+   containing sources and resistors. Your solutions may require use of
+   any analysis concepts learned in this course. 
+parts:
+# --------- Voltage Divider ------------------------
+  - question: |
+      A contact sensor changes resistance when touched. In the
+      schematic below, the contact resistance is **initially**
+      $R_C=\SI{1}{\mega\ohm}$, and the output voltage is
+      $V_{BC}=\SI{4.5}{\volt}$. When touched, the resistance
+      **changes** to $R_C=\SI{1}{\kilo\ohm}$. What is the final output
+      voltage at $V_{BC}$?       
+    figure: "`contact_sensor.tex`{=latex}"
+    solution: |
+       $R_C$ combines in parallel with the $\SI{100}{\kilo\ohm}$
+       resistor, for a combined resistance of $\SI{990.1}{\ohm}$. Then
+       we have a voltage divider so that
+       $V_{BC}=\SI{5}{\volt}\times\SI{990.1}{\ohm}/\left(\SI{990.1}{\ohm}+\SI{10}{\kilo\ohm}\right)=\SI{0.45}{\volt}$. 
+# --------- Node Voltage ------------------------
+  - question: |
+      A portion of a circuit is shown below. Given
+      $i_1=\SI{1}{\milli\ampere}$, 
+      $i_2=\SI{666}{\micro\ampere}$, and $v_B=\SI{1}{\volt}$, what is
+      the voltage at node C?  
+    figure: "`kcl_ohm.tex`{=latex}"
+    solution: |
+      This circuit is equivalent to a current divider: the entering
+      current at the node is $i=1mA$, and the exiting currents are
+      $i2R/(R+2R)=(2/3)i$ and $iR/(R+2R)=(1/3)i$. In a current
+      divider, the two resistors are arranged in parallel, so the
+      potential at $v_C$ must be the same as the potential at $v_B$.
+      Therefore $v_C = \SI{1}{\volt}$.
+# --------- KCL or Mesh Currents ------------------------
+  - question: |
+       In the circuit shown, the indicated current is
+       $i=\SI{1}{\milli\ampere}$. Determine the voltage at node M.
+    figure: "`kcl_loop.tex`{=latex}"
+    solution: |
+      The currents all flow in a loop through the current sources. At
+      each node, the total entering current is $i$ and the total
+      exiting current is also $i$. There is no surplus current
+      available for the resistor branches, so they all have zero
+      current and zero voltage drop. The center voltage is therefore
+      zero volts.
+# --------- Superposition ------------------------
+  - question: |
+       In this circuit, the voltage at node B is
+       $v_B=\SI{2}{\volt}$. Now suppose an independent current source
+       is connected between nodes B and C as indicated. Given that
+       $R=\SI{1}{\kilo\ohm}$ and $I=\SI{1}{\milli\ampere}$, what is
+       the voltage at node B after inserting the current source?
+    figure: "`superposition.tex`{=latex}"
+    solution: |
+      By the principle of superposition, to analyze the contribution
+      from the current source we can begin by setting the voltage
+      source to zero, making it a short circuit. Then the two
+      resistors are in parallel with a combined resistance of R/2. The
+      added voltage is 
+      $IR/2=\SI{0.5}{\volt}$, so the final voltage at node B is
+      $\SI{2.5}{\volt}$. 
+...

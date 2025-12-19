@@ -1,0 +1,31 @@
+---
+description: "Johnny's last experiment"
+figure: "johnny"
+points: 20
+statement: |
+   Johnny is experimenting with high voltage sources in the lab
+   today. He hasn't had any safety training but feels confident 
+   in his own instincts. While moving wires around, Johnny touches
+   the terminals of an active power supply sustaining $\SI{10}{\kilo\volt}$
+   between nodes A and B, as illustrated in the figure below. Answer the questions that 
+   follow.
+parts:
+  - question: |
+      During his last moments, Johnny observes that the power supply
+      current is $\SI{3}{\ampere}$. How much power is Johnny's body
+      absorbing?
+    solution: |
+      $P=\SI{30}{\kilo\watt}$
+  - question: |
+      While Johnny is immobilized by the electric current, he passes
+      the time by estimating his own body's electrical resistance. How
+      many Ohms does Johnny have?
+    solution: |
+      $R_\text{Johnny} = \SI{3.3}{\kilo\ohm}$
+  - question: |
+      Johnny suddenly realizes several things he could have done to
+      avoid this situation. Name something that would have improved
+      lab safety.
+    solution: |
+      Any reasonable answer.
+...

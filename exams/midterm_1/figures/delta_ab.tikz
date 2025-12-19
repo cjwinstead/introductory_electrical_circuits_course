@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+  \draw (0,0) node[anchor=east,blue] (a) {A}
+  to[short,f>^=$i_s$] ++(2,0) to[R=$R_1$,v=$v_1$,f=$i_1$] ++(3,0) to[short] node[midway,above,blue] {C} ++(1,0)
+  to[R=$R_2$,v=$v_2$] ++(3,0) -- ++(2,0) node[anchor=west,blue] (b) {B};
+  \draw ($(a.east)+(2,0)$) to[short,*-] ++(0,-2) coordinate (branchp)
+  ($(b.west)+(-2,0)$)  to[short,*-] ++(0,-2) coordinate (branchn)
+  (branchp) to[R=$R_3$,f=$i_3$,v=$v_3$] (branchn);
+  
+\end{tikzpicture}

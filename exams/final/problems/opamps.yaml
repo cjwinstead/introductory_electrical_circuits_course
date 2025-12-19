@@ -1,0 +1,44 @@
+---
+description: 'Op Amp Configurations'
+points: 40
+statement: |
+  These problems assume an ideal op amp with $A\rightarrow \infty$ and
+  power rails at $\pm\infty$.
+parts:
+# --------- Voltage Divider ------------------------
+  - question: |
+      An op amp is connected in a negative-feedback configuration as
+      shown. What is the output voltage? (Notice that all of the
+      signals are constant, nothing is changing with time).
+    figure: "`follower.tex`{=latex}"
+    solution: |
+       The resistor, inductor and capacitor have no effect on the
+       steady-state solution for this circuit. It is just a voltage
+       follower, so the output is 2V. 
+# --------- Superposition Inverting/Non-Inverting -----------------
+  - question: |
+      An op amp is connected in a negative-feedback configuration as
+      shown. What is the output voltage? 
+    figure: "`opamp_superposition.tex`{=latex}"
+    solution: |
+       This circuit is a superposition of inverting configuration
+       (gain of -3) and a non-inverting configuration (gain of 4). The
+       combined output is $4(-2)-3(1)=-11$V.
+# --------- Difference Amplifier -----------------
+  - question: |
+      An op amp is connected in a difference configuration as
+      shown. What is the output voltage? 
+    figure: "`difference.tex`{=latex}"
+    solution: |
+       The output should be $3(2-(-1))=9$V.
+# --------- Input Current -----------------
+  - question: |
+      An op amp is connected in a negative feedback configuration as
+      shown. What is the current $i_2$?
+    figure: "`opamp_input_current.tex`{=latex}"
+    solution: |
+      Zero. Due to the op amp's virtual short effect, the op amp's
+      input terminals are at the same potential, so there is no
+      voltage change across the resistor. Therefore it cannot have any
+      current. 
+...

@@ -1,0 +1,4 @@
+\begin{tikzpicture}
+  \draw (0,0) node[anchor=east,blue] {A}
+  to[R=R] ++(2,0) node[anchor=west,blue] {B};
+\end{tikzpicture}

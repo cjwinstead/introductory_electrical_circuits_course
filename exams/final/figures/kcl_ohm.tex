@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+  \coordinate (a) at (0,0);
+  \coordinate (b) at (3,0);
+  \coordinate (c) at (6,0);
+  \coordinate (d) at (3,-2.5);
+
+  \foreach \x/\y/\z/\q in {a/b/1/{},b/c/2/{},b/d/3/2} {
+    \draw (\x) to[R=${\q}R$,f=$i_\z$] (\y);
+  };
+
+  \node[circ] at (b) {};
+
+  \foreach \x/\y in {a/A,b/N,c/B} \node[anchor=south] at (\x) {\y};
+
+  \node[anchor=north] at (d) {C};
+
+\end{tikzpicture}

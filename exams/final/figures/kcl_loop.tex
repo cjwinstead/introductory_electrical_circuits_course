@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+  \node[circ,blue,label={[label distance=0.2]40:A}] at (0,0) (a) {};
+  \node[circ,blue,label={[label distance=0.2]270:B}] at (-4,-6) (b) {};
+  \node[circ,blue,label={[label distance=0.2]270:C}] at (4,-6) (c) {};
+  
+  \coordinate (ab) at ($(a)!0.5!(b)$);
+  \coordinate (ac) at ($(a)!0.5!(c)$);
+  \coordinate (bc) at ($(b)!0.5!(c)$);
+  
+  \node[circ,anchor=south west,label={[label distance=0.2]270:M}] at (barycentric cs:ab=1,bc=1,ac=1) (y) {};
+  \draw (a) to[R,l_=$R$,name=ray] (y)
+  (b) to[R=$R$,name=rby] (y)
+  (c) to[R,l_=$R$,name=rcy] (y);
+
+  \draw (a) to[current source,l=$i$] (b)
+  to[current source,l=$i$] (c)
+  to[current source,l=$i$] (a);
+  \draw (b) -- ++(-1,0) node[ground] {};
+\end{tikzpicture}

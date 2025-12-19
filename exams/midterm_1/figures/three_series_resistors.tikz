@@ -1,0 +1,6 @@
+\begin{tikzpicture}
+  \draw (0,0) node[anchor=east,blue] {A}
+  to[R=$R_1$,v=$v_1$,f>^=$i_{AB}$] ++(3,0) to[short] node[midway,above,blue] {B} ++(.1,0)
+  to[R=$R_2$,v=$v_2$] ++(3,0) to[short] node[midway,above,blue] {C} ++(.1,0)
+  to[R=$R_3$,v=$v_3$] ++(3,0) node[anchor=west,blue] {D};
+\end{tikzpicture}
