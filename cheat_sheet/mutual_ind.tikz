@@ -1,0 +1,24 @@
+
+
+\ctikzset{raised voltages}
+
+\coordinate (a) at (0,0);
+\coordinate (b) at (0,-2);
+\coordinate (c) at (2,0);
+\coordinate (d) at (2,-2);
+
+\draw (a) ++(-1,0) to[short,f=$i_1$] (a) to[L=$L_1$,name=l1,v=$v_1$] (b) -- ++(-1,0)
+(c) ++(1,0) to[short,f_=$i_2$] (c) to[L,l_=$L_2$,name=l2,v^=$v_2$] (d) -- ++(1,0);
+
+\node[circ] at (l1.ll dot) {};
+\node[circ] at (l2.ul dot) {};
+
+\draw (l1.ul dot) to[out=45,in=135] node[midway,above] {$M$} (l2.ll dot);
+
+\node[anchor=north west,align=left] at ($(c)+(2,0.25)$) {
+  $\begin{aligned}
+    v_1 &= L_1\frac{di_1}{dt} + M\frac{di_2}{dt}\\
+    ~&~\\
+    v_2 &= L_2\frac{di_2}{dt} + M\frac{di_1}{dt}
+  \end{aligned}$
+};

@@ -1,0 +1,45 @@
+
+\ctikzset{bipoles/cuteswitch/thickness=0.5}
+
+\coordinate (gl) at (0,0);
+\coordinate (a) at (0,2);
+\coordinate (b) at (2,2);
+\coordinate (c) at (2,0);
+
+\node[cute spdt up arrow,xscale=-1,anchor=in] at (a) (sw) {};
+
+\draw (sw.in) to[R=$R$] (b) to[C=$C$,v=$v_c$,f=$i_c$] (c)
+node[ground] {};
+
+\node[anchor=east] at (sw.out 1) {$V_I$};
+\node[anchor=east] at (sw.out 2) {$V_F$};
+
+\node[anchor=north west,align=left,yshift=0.4cm] at ($(b)+(1,0)$) {
+  Initial: $v_c(0) = V_I$\\
+  Final: $v_c(\infty) = V_F$\\~\\
+  Transient: $t>0$\\
+  $v_c(t) = V_F + \left(V_I-V_F\right)e^{-t/\tau}$\\~\\
+  Time Constant: $\tau = RC$
+  };
+
+\begin{axis}[
+    at={(a)},
+    yshift=-0.75cm,
+    xshift=-0.5cm,
+    anchor=north west,
+    width=3cm,
+    height=3cm,
+    xmin=-3,
+    ymin=-0.1,
+    xmax=10,
+    ymax=1.2,
+    xlabel={\tiny Time},
+    ylabel={\small $v_c$},
+    ylabel near ticks,
+    xlabel near ticks,
+    xtick=\empty,
+    ytick=\empty,
+  ]
+  \addplot+[very thick,domain=0:10,samples=50,blue,no marks] {1-exp(-x)};
+  \addplot[blue,very thick,no marks] coordinates {(-3,0) (0,0)};
+\end{axis}

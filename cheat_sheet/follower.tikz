@@ -1,0 +1,12 @@
+\node[op amp] at (0,0) (oa) {};
+
+\draw (oa.-) to[short,-] ++(0,1) coordinate (f) to[short]
+(f-|oa.out) to[short,-*] (oa.out) to[short,-o] ++(1,0)
+node[anchor=west] {$v_{\rm OUT}$}
+(oa.+) to[short,-o] ++(-1,0) node[anchor=east] {$v_{\rm IN}$};
+
+\node[anchor=east] at (oa.-) {$v_n$};
+\node[anchor=north east] at (oa.+) {$v_p$};
+
+\node[anchor=north,align=center,yshift=-0.25cm] at (oa.south) { $v_{\rm OUT} = v_n
+  \approx v_p = v_{\rm IN}$};

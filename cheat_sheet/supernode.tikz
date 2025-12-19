@@ -1,0 +1,27 @@
+
+\node[anchor=south west] at (-1,0.5) {Use with node-voltage method.};
+
+\coordinate (a) at (0,0);
+
+\coordinate (b) at (0,-4);
+
+\draw (b) to[voltage source,v=$V_{AB}$] (a)
+(a) to[short,-*,f=$i_1$] ++(0,-1) coordinate (anode)
+(anode) to[short,f=$i_2$] ++(2,0) coordinate (abranch)
+(b) to[short,-*,f=$i_3$] ++(0,1) coordinate (bnode)
+(bnode) to[short,f=$i_4$] ++(2,0) coordinate (bbranch);
+
+\draw[dotted] (abranch) -- ++(1,0) (bbranch) -- ++(1,0);
+
+\draw[dotted,rounded corners] ($(anode)+(-0.5,0.25)$) rectangle
+($(bnode) + (0.5,-0.25)$);
+
+\node[anchor=east,blue] at (a) {A};
+\node[anchor=east,blue] at (b) {B};
+
+\node[anchor=north west,yshift=-0.5cm,xshift=-1cm,align=center] at (b)
+     {
+       KCL wraps around two nodes \\to avoid voltage source.\\$\sum$ currents in
+  $=\sum$ currents out\\KCL: $i_1+i_3=i_2+i_4$\\Constraint: $v_A -
+  v_B = v_{AB}$};
+

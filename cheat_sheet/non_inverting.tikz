@@ -1,0 +1,19 @@
+
+\node[op amp] at (0,0) (oa) {};
+
+\draw (oa.-) to[short,*-] ++(0,1) coordinate (f)
+(f) to[R,l=$R_F$] (f -| oa.out) to[short,-*] (oa.out)
+(oa.-) to[R=$R_I$] ++(-1.5,0) node[ground] {}
+(oa.+) |- ++(-1,-1) node[anchor=east] {$v_{\rm IN}$}
+(f-|oa.out) to[short,-*] (oa.out) to[short,-o] ++(1,0)
+node[anchor=west] {$v_{\rm OUT}$} ;
+
+
+\node[anchor=north,align=center,xshift=0.5cm] at (oa.south) {
+  $\begin{aligned}
+    v_{\rm OUT} &= v_{\rm IN} G_{ni}\\
+    G_{ni} &= 1+\frac{R_F}{R_I}\\
+    v_n \approx v_p &= v_{\rm IN}
+  \end{aligned}$};
+
+

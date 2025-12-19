@@ -1,0 +1,247 @@
+% Options for packages loaded elsewhere
+\documentclass[
+$if(fontsize)$
+  $fontsize$,
+$else$
+  11pt,
+$endif$
+$if(papersize)$
+  $papersize$paper,
+$endif$
+$for(classoption)$
+  $classoption$$sep$,
+$endfor$
+]{$documentclass$}
+
+$if(fontfamily)$
+\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
+$else$
+\usepackage{lmodern}
+$endif$
+$if(linestretch)$
+\usepackage{setspace}
+$endif$
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+
+\usepackage{xcolor}
+
+$if(geometry)$
+$if(beamer)$
+\geometry{$for(geometry)$$geometry$$sep$,$endfor$}
+$else$
+\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+$endif$
+$endif$
+
+$if(graphics)$
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+$endif$
+
+$if(numbersections)$
+\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+$else$
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+$endif$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\date{}
+\author{}
+
+\title{$department$~$coursenumber$: $course$}
+
+\setlength{\parindent}{0pt}
+
+\usepackage[american]{circuitikz}
+\usepackage{titling}
+
+
+\pretitle{% add some rules
+  \begin{center}
+\begin{minipage}{0.5in}\includegraphics{figures/logo.png}\end{minipage}\begin{minipage}{6in}\vspace{0.5cm} Electrical and Computer Engineering\\ Utah State University\\ 
+\end{minipage}    
+     
+\Huge\bfseries     
+}%, make the fonts bigger, make the title (only) bold
+\posttitle{%
+  
+  \end{center}%
+  %\noindent\vrule height 2.5pt width \textwidth
+  \begin{circuitikz}
+	\draw[ultra thick] (0,0) -- ++(0.5in,0)  to[R] ++(4cm,0) -- (6.5in,0);
+  \end{circuitikz}
+  \vskip .75em plus .25em minus .25em% increase the vertical spacing a bit, make this particular glue stretchier
+\Large      $classtime$ \hfill    $location$
+
+}
+
+\renewcommand\maketitlehooka{%
+\Large      Syllabus \hfill    $semester$ $year$
+
+
+  \noindent\vrule height 2.5pt width \textwidth
+}
+
+\usepackage[skip=10pt]{parskip}
+
+
+\begin{document}
+
+\maketitle
+
+\vspace{-2cm}
+
+%{\bf Time and Location:} $classtime$, $location$
+
+{\bf Course Description:} $description$
+
+{\bf Textbook:} $for(textauthor)$ $textauthor$, $endfor$ {\em $texttitle$}, $textpublisher$, $textyear$.
+
+\begin{tabbing}
+{\bf Prerequisite(s):} ~~~ \= \kill
+{\bf Prerequisite(s):} $for(prereq)$ \> $prereq$ \\ $endfor$
+\end{tabbing}
+
+\begin{tabbing}
+  Office Hours ~~ \= \kill
+  {\bf Instructor:} \> $instructor$, $office$ ~~~ $contact$\\
+  office hours: $for(officehours)$ \> $officehours$ \\
+  $endfor$
+\end{tabbing}
+
+{\bf Lab Sections:} held in $labroom$.
+\begin{tabbing}
+  ~~~~~~~~~~~~ \= 501 ~~~~~~~~\= Thursday ~~~~~~~~\= 10:10 AM \=~~--~~\= 10:10 AM \kill
+  $for(labsections)$ \> $labsections.sec$ \> $labsections.day$ \> $labsections.starttime$ \> -- \> $labsections.endtime$ \\  $endfor$
+\end{tabbing}
+
+%\begin{tabbing}
+%{\bf Teaching Assistants:}~~\= \kill
+%{\bf Teaching Assistants:} $for(ta)$\> $ta$ \\
+%  $endfor$
+%\end{tabbing}
+
+\begin{tabbing}
+{\bf Web Site(s):} ~~\= \kill
+{\bf Web Site(s):} $for(website)$ \> $website$ \\
+  $endfor$
+\end{tabbing}
+
+\section*{Course Requirements}
+
+\begin{tabbing}
+{\bf Teaching Assistants:}~~\= \kill
+{\bf Required Materials:} $for(materials)$\> $materials$ \\
+  $endfor$
+\end{tabbing}
+
+\begin{tabbing}
+{\bf Teaching Assistants:}~~\= \kill
+{\bf Required Software:} $for(software)$\> $software$ \\
+  $endfor$
+\end{tabbing}
+
+{\bf Homework: } $homework$
+
+{\bf Exams: } $tests$
+
+{\bf Labs: } $labs$
+
+\section*{Grading Policy}
+
+$grade_policy$
+
+\begin{tabbing}
+  Grade Distribution~~~ \= Homework~~~ \= \kill
+  {\bf Grade Distribution} $for(grade_distribution)$ \> $grade_distribution.category$ \> $grade_distribution.percent$\% \\ $endfor$
+\end{tabbing}
+
+
+\begin{tabbing}
+{\bf Grade Scale~~~~~~~} \= A~~~~~~~~~ \= 93\% ~~~~\=~~ -- ~~\= 100\%~~~ \kill
+{\bf Grade Scale~~~~~~~} \> A~~~~~~~~~ \> 93\% \> -- \> 100\%~~~ \\
+                      \> A-  \> 90 \> -- \> 93 \\
+		      \> B+  \> 87 \> -- \> 90 \\
+		      \> B   \> 83 \> -- \> 87 \\
+		      \> B-  \> 80 \> -- \> 83 \\
+		      \> C+  \> 77 \> -- \> 80 \\
+		      \> C   \> 73 \> -- \> 77 \\
+		      \> C-  \> 70 \> -- \> 73 \\
+		      \> D   \> 60 \> -- \> 70 \\
+		      \> E   \>  0 \> -- \> 60 \\
+\end{tabbing}		      
+
+
+\section*{Learning Objectives}
+
+\begin{enumerate}
+$for(objectives)$ \item $objectives$ $endfor$
+\end{enumerate}
+
+\section*{Academic Policies}
+
+{\bf Course fees} are used to support laboratory equipment and computing facilities, software, materials, maintenance and teaching assistants.
+
+{\bf Disability Accomodations:} USU welcomes students with disabilities and it committed to providing
+reasonable accomodations when needed. If you have, or suspect you may have, any disability
+that may require accomodations in this course, please contact the Disability Resource Center (DRC)
+as early in the semester as possible. The DRC is located in the University Inn, rm 101, and can
+be reached at (435)\,797-2444, {\em drc@usu.edu}. All disability accomodations must be approved
+by the DRC. Once approved, the DRC will coordinate with faculty to provide accomodations.
+
+{\bf Academic Integrity:} The University expects that students and faculty alike maintain
+the highest standards of academic honesty. The Code of Policies and Procedures for Students
+at Utah State University (aka Student Conduct Code) addresses academic integrity and honesty
+and notes the following:
+\begin{quote}
+Students have a responsibility to promote academic
+integrity at the University by not participating in or facilitating
+others' participation in any act of academic dishonesty and by
+reporting all violations or suspected violations of the Academic
+Integrity Standard to their instructors.
+\end{quote}
+
+\begin{quote}
+The Honor Pledge: To enhance the learning environment at Utah State University
+and to develop student academic integrity, each student agrees to the following
+Honor Pledge:
+
+\begin{enumerate}
+\item Cheating: (1) using or attempting to use or providing others with any unauthorized assistance in taking quizzes, tests, examinations, or in any other academic exercise or activity, including working in a group when the instructor has designated that the quiz, test, examination, or any other academic exercise or activity be done ``individually''; (2) depending on the aid of sources beyond those authorized by the instructor in writing papers, preparing reports, solving problems, or carrying out other assignments; (3) substituting for another student, or permitting another student to substitute for oneself, in taking an examination or preparing academic work; (4) acquiring tests or other academic material belonging to a faculty member, staff member, or another student without express permission; (5) continuing to write after time has been called on a quiz, test, examination, or any other academic exercise or activity; (6) submitting substantially the same work for credit in more than one class, except with prior approval of the instructor; or (7) engaging in any form of research fraud.
+\item Falsification: altering or fabricating any information or citation in an academic exercise or activity.
+\item Plagiarism: representing, by paraphrase or direct quotation, the published or unpublished work of another person as one's own in any academic exercise or activity without full and clear acknowledgment. It also includes using materials prepared by another person or by an agency engaged in the sale of term papers or other academic materials.
+\end{enumerate}
+\end{quote}
+
+{\bf Discrimination and Sexual Misconduct: } 
+USU strives to provide an environment for students and employees that is free from discrimination and sexual misconduct. If you experience sexual misconduct or discrimination at any point during the semester inside or outside of class, you are encouraged to contact the USU Title IX Coordinator via Old Main room 161 in Logan, 435-797-1266, titleix@usu.edu, or at equity.usu.edu/report. You can learn more about the USU resources available for individuals who have experienced sexual misconduct at sexualrespect.usu.edu. Resources for individuals who have experienced discrimination are listed at equity.usu.edu.
+
+{\bf Required Reporting of Sexual Misconduct: }
+The instructor is designated by USU as a ``reporting employee.'' This means that if you share information about sexual misconduct (sexual harassment, sexual assault, relationship violence, or sex-based stalking) with the instructor, they will report that information to the USU Title IX Coordinator. The instructor is also required to tell you about designated confidential resources, supportive measures, and how you can file a report with the USU Title IX Coordinator.
+
+{\bf Mental Health: }
+Mental health is critically important for the success of USU students. As a student, you may experience a range of issues that can cause barriers to learning, such as strained relationships, increased anxiety, alcohol/drug problems, feeling down, difficulty concentrating and/or lack of motivation. These mental health concerns or stressful events may lead to diminished academic performance or reduce your ability to participate in daily activities. Utah State University provides free services for students to assist them with addressing these and other concerns. You can learn more about the broad range of confidential mental health services available on campus at Counseling and Psychological Services (CAPS).
+
+Students are also encouraged to download the ``SafeUT App'' to their smartphones. The SafeUT application is a 24/7 statewide crisis text and tip service that provides real-time crisis intervention to students through texting and a confidential tip program that can help anyone with emotional crises, bullying, relationship problems, mental health, or suicide related issues.
+
+
+$body$
+
+\includegraphics{figures/homework_template.png}
+
+\end{document}

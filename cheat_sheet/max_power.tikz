@@ -1,0 +1,13 @@
+
+
+\draw (0,0) coordinate (g) to[voltage source, l=$V_{\rm Th}$] ++(0,2)
+to[R=$R_{\rm Th}$,-o] ++(2,0) coordinate (a) node[blue,anchor=south] {A}
+(g) to[short,-o] ++(2,0) coordinate (b) node[blue,anchor=north] {B};
+
+\draw[blue] (a) -- ++(1,0) coordinate (c)
+(b) -- ++(1,0) coordinate (d) to[R=$R_L$] (c);
+
+\node[align=left,anchor=north west] at ($(a)+(2,0)$) {
+  Load power is maximum\\ when $R_L = R_{\rm Th}$};
+
+

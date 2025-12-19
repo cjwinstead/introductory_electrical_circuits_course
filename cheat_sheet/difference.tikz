@@ -1,0 +1,20 @@
+
+\node[op amp] at (0,0) (oa) {};
+
+\draw (oa.-) to[short,*-] ++(0,1) coordinate (f)
+(f) to[R,l=$R_F$] (f -| oa.out) to[short,-*] (oa.out)
+(oa.-) to[R,l_=$R_I$,-o] ++(-1.5,0) node[anchor=east] {$v_B$}
+(f-|oa.out) to[short,-*] (oa.out) to[short,-o] ++(1,0)
+node[anchor=west] {$v_{\rm OUT}$} ;
+
+\draw (oa.+) to[R=$R_3$,*-o] ++(-1.5,0) node[anchor=east] {$v_A$}
+(oa.+) to[R=$R_4$] ++(0,-1.5) node[ground] {};
+
+\node[anchor=north,align=center,xshift=1.5cm] at (oa.south) {
+  $\begin{aligned}
+    \frac{R_3}{R_4} &= \frac{R_I}{R_F}\\
+    v_{\rm OUT} &= G_d \left(v_A-v_B\right)\\
+    G_d &= \frac{R_F}{R_I}    
+  \end{aligned}$};
+
+

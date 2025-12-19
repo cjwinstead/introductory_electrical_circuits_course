@@ -1,0 +1,21 @@
+
+\coordinate (a) at (0,0);
+\coordinate (b) at (3,0);
+\coordinate (c) at (6,0);
+\coordinate (d) at (3,-2.5);
+
+\foreach \x/\y/\z in {a/b/a,b/c/b,b/d/c} {
+  \draw (\x) to[R=$R_\z$,f=$i_\z$] (\y);
+};
+
+\node[circ] at (b) {};
+
+\foreach \x/\y in {a/A,b/N,c/B} \node[anchor=south] at (\x) {\y};
+
+\node[anchor=north] at (d) {C};
+
+\node[anchor=north west,align=left] at ($(c)+(1,1)$) {
+  ~\\Equation at node N:\\~\\
+  $\begin{aligned}i_a &= i_b+i_c\\ \frac{v_A-v_N}{R_a} &= \frac{v_N-v_B}{R_b} +
+    \frac{v_N-v_C}{R_c}
+    \end{aligned}$};

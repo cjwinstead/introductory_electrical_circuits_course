@@ -1,0 +1,18 @@
+
+\coordinate (a) at (0,0);
+\coordinate (b) at (0,-2);
+
+\draw (a) to[L=$L$,v=$v_\ell$,f=$i_\ell$] (b);
+\node[anchor=south,blue] at (a) {A};
+\node[anchor=north,blue] at (b) {B};
+
+\node[anchor=north west,align=left] at ($(a.north)+(1,0.5)$) {
+  $\begin{aligned}
+    v_\ell &= L\frac{d\,i_\ell}{dt}\\
+    i_\ell &= I_0 + \frac{1}{L}\int_0^tv_\ell\,d\tau\\
+    \phi_\ell &= Li_\ell
+  \end{aligned}$\\~\\
+  {\bf Current} cannot change instantaneously.\\
+  Steady-state: {\bf short circuit}.\\
+  Stored energy:  $E=\frac{1}{2}Li_\ell^2$
+};

@@ -1,0 +1,27 @@
+
+\coordinate (a) at (0,0);
+\coordinate (b) at (0,-3);
+\coordinate (c) at (3,0);
+\coordinate (d) at (3,-3);
+
+\draw (b) to[voltage source,l=${V_S=I_SR}$] (a)
+(a) to[R=$R$,-o] (c)
+(b) to[short,-o] (d);
+
+\node[anchor=west,blue] at (c) {A};
+\node[anchor=west,blue] at (d) {B};
+\node at ($(c)!0.5!(d)+(1.5,0)$) {$\equiv$};
+
+\coordinate (e) at (7,0);
+\coordinate (f) at (7,-3);
+\coordinate (g) at (10,0);
+\coordinate (h) at (10,-3);
+
+\draw (f) to[current source,l=${I_S=\frac{V_S}{R}}$] (e)
+(e) to[short,-o] (g)
+(f) to[short,-o] (h)
+($(f)!0.5!(h)$) to[R=$R$,*-*] ($(e)!0.5!(g)$);
+
+\node[anchor=west,blue] at (g) {A};
+\node[anchor=west,blue] at (h) {B};
+

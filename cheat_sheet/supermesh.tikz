@@ -1,0 +1,45 @@
+\node[anchor=south] at (4,1) {Use with mesh-current method};
+
+\coordinate (a) at (0,0);
+\coordinate (b) at (4,0);
+\coordinate (c) at (8,0);
+\coordinate (d) at (8,-3);
+\coordinate (e) at (4,-3);
+\coordinate (f) at (0,-3);
+
+\foreach \x/\y/\z in {a/b/1, b/c/2, c/d/3, d/e/4, e/f/5, f/a/6} {
+  \draw (\x) to[R=$R_\z$] (\y);
+};
+
+\draw (e) to[current source,*-*,l=$I_S$] (b);
+
+\foreach \x/\y/\z in {a/e/a,b/d/b} {
+  \draw[->,green!50!black] ($(\x)!0.50!(\y)+(0.5,0)$) arc
+        [
+          start angle=360,
+          end angle=180,
+          x radius=0.5cm,
+          y radius = 0.5cm
+          ];
+\draw[->,green!50!black] ($(\x)!0.50!(\y)+(-0.5,0)$) arc
+        [
+          start angle=180,
+          end angle=0,
+          x radius=0.5cm,
+          y radius = 0.5cm
+          ];
+\node[green!50!black] at ($(\x)!0.50!(\y)$) {$i_\z$};
+};
+
+\foreach \x/\y/\z in {a/A/south east, b/B/south, c/C/south west,
+  d/D/north west, e/E/north, f/F/north east} {
+  \node[anchor=\z,blue] at (\x) {\y};
+};
+
+\draw[dotted] ($(a)+(-0.75,0.75)$) rectangle ($(d)+(0.75,-0.75)$);
+\draw[dotted] ($(a)+(0.25,-0.25)$) rectangle ($(d)+(-0.25,0.25)$);
+
+\node[anchor=north,yshift=-0.75cm,align=center] at (e) {KVL
+  wraps around two meshes to avoid current source.\\KVL equation: $R_1i_a + R_2i_b + R_3i_b + R_4
+  i_b + R_5 i_a + R_6 i_a = 0$\\
+Mesh Constraint: $i_b-i_a = I_S$};

@@ -1,0 +1,9 @@
+\draw (0,0) node[anchor=south] (a) {A} to[R=$R_1$,v=$v_{AB}$] ++(0,-2) coordinate
+(b) node[anchor=north west] {B} (b)-- ++(0,-0.5) to[R=$R_2$,v=$v_{BC}$] ++(0,-2) node[anchor=north] (c) {C};
+
+
+\node[anchor=north west] at ($(a.north east)+(1,-2)$) {
+  $\begin{aligned}
+    v_{AB}&= v_{AC}\frac{R_1}{R_1 + R_2}\\
+    v_{BC}&= v_{AC}\frac{R_2}{R_1 + R_2}
+   \end{aligned}$};

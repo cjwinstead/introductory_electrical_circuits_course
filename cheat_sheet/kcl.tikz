@@ -1,0 +1,16 @@
+
+\draw (0,0) to[short,-*,i=$i_1$] ++(1,0) coordinate (n)
+(n) to[short,i=$i_2$] ++(1,0)
+(n) to[short,i=$i_3$] ++(0,-1) coordinate (b);
+
+\node[draw,dotted,rounded corners,inner sep=0,minimum width=1cm,minimum
+  height=0.5cm] at (3.5,0) (supernode) {};
+\draw (supernode.west) ++(-0.5,0) to[short,i=$i_1$] (supernode.west);
+\draw (supernode.east)  to[short,i=$i_2$] ++(0.5,0);
+\draw (supernode.south)  to[short,i=$i_3$] ++(0,-0.5);
+
+\node[anchor=north west] at (0,0 |- b) (kcl) {$\sum$ currents in $=\sum$ currents
+  out};
+
+\node[anchor=north] at (kcl.south) {$i_1 = i_2+i_3$};
+

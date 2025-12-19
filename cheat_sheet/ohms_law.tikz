@@ -1,0 +1,14 @@
+
+\draw (0,0) node[anchor=south] (a) {A}
+to[R=$R$,v=$v_{AB}$,f=$i$] ++(0,-2) node[anchor=north] (b)
+{B};
+
+\node[anchor=west] at ($(a)!0.5!(b)+(1,0)$) {%
+$\begin{aligned}%
+    v_{AB} &= iR\\
+    v_A &= v_B + iR\\%
+    i &= \frac{v_{AB}}{R}\\
+    i &= \frac{v_A - v_B}{R}%
+  \end{aligned}$
+};
+

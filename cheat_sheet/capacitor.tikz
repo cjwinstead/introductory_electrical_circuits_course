@@ -1,0 +1,18 @@
+
+\coordinate (a) at (0,0);
+\coordinate (b) at (0,-2);
+
+\draw (a) to[C=$C$,v=$v_c$,f=$i_c$] (b);
+\node[anchor=south,blue] at (a) {A};
+\node[anchor=north,blue] at (b) {B};
+
+\node[anchor=north west,align=left] at ($(a.north)+(1,0.5)$) {
+  $\begin{aligned}
+    i_c &= C\frac{d\,v_c}{dt}\\
+    v_c &= V_0 + \frac{1}{C}\int_0^ti_c\,d\tau\\
+    q_c &= Cv_c
+  \end{aligned}$\\~\\
+  {\bf Voltage} cannot change instantaneously.\\
+  Steady-state: {\bf open circuit}.\\
+  Stored energy:  $E=\frac{1}{2}Cv_c^2$
+};

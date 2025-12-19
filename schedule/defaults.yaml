@@ -1,0 +1,7 @@
+---
+documentclass: article
+geometry:
+  - margin=1in
+header-includes:
+  - \usepackage{termcal}
+...

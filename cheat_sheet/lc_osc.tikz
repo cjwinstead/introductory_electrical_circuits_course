@@ -1,0 +1,17 @@
+
+\ctikzset{bipoles/cuteswitch/thickness=0.5}
+
+\node [cute spdt down arrow] at (2,2) (sw) {};
+\draw (0,0) coordinate (g) to[C=$C$,v=$v(t)$] ++(0,2) -- (sw.in)
+(sw.out 1) -- ++(2,0) coordinate (l) to[L=$L$,f=$i(t)$] (l |- g) -- (g)
+(sw.out 2 |- g) to[voltage source,*-,l=$V_I$] (sw.out 2);
+
+\node[anchor=north west,align=left] at (0,-0.25) {
+  Energy oscillates between \\inductor and capacitor,
+  $v(t)=V_I\cos\left(\omega t\right)$\\
+  Frequency: $\begin{aligned}\omega &=
+    \sqrt{\frac{1}{LC}}\text{\,rad/sec}\\
+    f &= \frac{\omega}{2\pi}\text{\,Hz}
+  \end{aligned}$\\
+  Current: $i(t) = V_I\sqrt{\frac{C}{L}}\sin\left(\omega t\right)$
+};

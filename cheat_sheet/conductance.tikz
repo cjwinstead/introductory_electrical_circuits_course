@@ -1,0 +1,12 @@
+
+\draw (0,0) node[anchor=south] (a) {A}
+to[R=$\frac{1}{G}$,v=$v$,f=$i$] ++(0,-2) node[anchor=north] (b)
+{B};
+
+\node[anchor=west] at ($(a)!0.5!(b)+(1,0)$) {%
+$\begin{aligned}%
+    v &= \frac{i}{G}\\%
+    i &= vG%
+  \end{aligned}$
+};
+

@@ -1,0 +1,24 @@
+
+\draw (0,0) coordinate (a) to[generic,*-*,l=rise,v>=$v_1$] ++(0,4)
+coordinate (b)
+(b) to[generic,-*,l=rise,v>=$v_2$] ++(3,0) coordinate (c)
+(c) to[generic,-*,l=drop,v_=$v_3$] ++(0,-4) coordinate (d)
+(d) to[generic,l=drop,v_=$v_4$] (a);
+
+\tikzset{link/.style={dashed,green!50!black,-{Stealth[length=10pt]}}}
+
+\draw[link] ($(a)+(-0.25,0)$) to[out=135,in=225] ($(b)+(-0.25,0)$);
+\draw[link] ($(b)+(0,0.25)$) to[out=45,in=135] ($(c)+(0,0.25)$);
+\draw[link] ($(c)+(0.25,0)$) to[out=-45,in=45] ($(d)+(0.25,0)$);
+\draw[link] ($(d)+(0,-0.25)$) to[out=225,in=-45] ($(a)+(0,-0.25)$);
+
+\node[anchor=north east,blue] at (a) {A};
+\node[anchor=south east,blue] at (b) {B};
+\node[anchor=south west,blue] at (c) {C};
+\node[anchor=north west,blue] at (d) {D};
+
+\node[anchor=north,align=center] at ($(a)!0.5!(d)+(0,-1)$) {
+  $\sum$ rises $=\sum$ drops\\~\\
+  $v_1+v_2=v_3+v_4$
+};
+    

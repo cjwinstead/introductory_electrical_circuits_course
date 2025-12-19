@@ -1,0 +1,14 @@
+\draw (0,0) node[anchor=south] (a) {A} (a.south) -- ++(-1,0) coordinate (al)
+to[R=$\frac{1}{G_1}$] ++(0,-2) coordinate (bl) (a.south) -- ++(1,0) coordinate (ar) to[R=$\frac{1}{G_2}$]
+++(0,-2) coordinate (br) -- (bl);
+\node[anchor=north] at ($(bl)!0.5!(br)$) {B};
+
+\node at ($(ar)!0.5!(br) + (1,0)$) {$\equiv$};
+
+\draw (ar) ++(2,0) node[anchor=south] (aeq) {A} (aeq.south)
+to[R=$\frac{1}{G_{\rm eq}}$] ++(0,-2) node[anchor=north] (beq) {B};
+
+\node[anchor=north] at ($(bl)!0.5!(beq)+(0,-0.5)$)
+     {$G_{\rm eq}=G_1+G_2$};
+
+     

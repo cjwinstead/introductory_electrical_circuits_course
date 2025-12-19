@@ -1,0 +1,40 @@
+
+\node[draw,minimum height=3cm,minimum width=3.7cm] at (0,0) (ckta) {Circuit};
+\node[draw,minimum height=3cm,minimum width=3.7cm] at (6.7,0) (cktb) {Circuit};
+\node[draw,minimum height=3cm,minimum width=3.7cm] at (0,-4.5) (cktc) {Circuit};
+
+
+\foreach \x in {a,b,c} {
+  \coordinate (pckt\x) at ($(ckt\x.north east)!0.1!(ckt\x.south east)$);
+  \coordinate (nckt\x) at ($(ckt\x.north east)!0.9!(ckt\x.south east)$);
+  \draw (pckt\x) to[short,-o] ++(1,0) node[anchor=south,blue] (pterm\x) {A}
+  (nckt\x) to[short,-o] ++(1,0) node[anchor=north,blue] (nterm\x) {B};
+}
+
+\node[anchor=north] at (pterma.south) {$+$};
+\node[anchor=south] at (nterma.north) {$-$};
+\node at ($(pterma)!0.5!(nterma)$) {$V_{\rm Th}$};
+
+\draw (ptermb) to[short,f=$I_{SC}$] (ntermb);
+
+\node[anchor=south] at (cktb.south) {$R_{\rm Th}
+  = \frac{V_{\rm Th}}{I_{SC}}$};
+
+\draw (ntermc) to[voltage source,l=$V_x$,f=$I_x$] (ptermc);
+
+\node[anchor=south] at (cktc.south) {$R_{\rm Th} = \frac{V_x}{I_x}$};
+
+\node[anchor=south,yshift=0.25cm] at (ckta.north) {Thevenin Voltage};
+\node[anchor=south,yshift=0.25cm,xshift=0.5cm] at (cktb.north) {Short-Circuit Current Method};
+\node[anchor=south,yshift=0.25cm,xshift=0.5cm] at (cktc.north) {Test Voltage Source Method};
+\node[anchor=south,yshift=0.25cm] at (cktc.north -| cktb.south) {Thevenin Equivalent
+Circuit};
+
+\node[anchor=north,align=center] at (cktc.north) {\small Set internal independent\\ sources
+  to zero.};
+  
+\draw (cktb.south west |- ntermc.east) coordinate (g) to[voltage
+  source, l=$V_{\rm Th}$] (g |- pcktc) to[R=$R_{\rm Th}$,-o]
+(pcktc -| cktb.east) node[blue,anchor=south] {A}
+(g) to[short,-o] (g -| pcktb) node[blue,anchor=north] {B};
+

@@ -1,0 +1,19 @@
+---
+labs:
+  - { week: '8/25/2025', number: '1', activity: 'Safety Module/Quiz, Obtain Lab Materials, Breadboard video' }
+  - { week: '9/1/2025', number: '1', activity: 'DMM Video; Pre-Lab 1; Experiments: Resistors (Lab 1)' }
+  - { week: '9/8/2025', number: '2', activity: 'Pre-Lab 2; PSU Video; Experiments: Series/Parallel Combinations (Lab 2)' }
+  - { week: '9/15/2025', number: '3', activity: 'DMM Current Video; Pre-Lab 3; Experiments: Voltage and Current Dividers (Lab 3)' }
+  - { week: '9/22/2025', number: ' ', activity: 'No Lab (test week)' }
+  - { week: '9/29/2025', number: '4', activity: 'Pre-Lab 4; Experiments: Kirchoffs Laws (Lab 4)' }
+  - { week: '10/6/2025', number: ' ', activity: 'No Lab (catch-up week)' }
+  - { week: '10/13/2025', number: '5', activity: 'Pre-Lab 5' }
+  - { week: '10/20/2025', number: '5', activity: 'Experiments: Thevenin and Norton Equivalents (Lab 5)' }
+  - { week: '10/27/2025', number: ' ', activity: 'No Lab (test week)' }
+  - { week: '11/3/2025', number: '6', activity: 'Pre-Lab 6' }
+  - { week: '11/10/2025', number: '6', activity: 'Oscilloscope Video, Experiments: Op Amp Circuits (Lab 6)' }
+  - { week: '11/17/2025', number: '', activity: 'No Lab (catch-up week)' }
+  - { week: '11/24/2025', number: ' ', activity: 'No Lab (Thanksgiving)' }
+  - { week: '12/1/2025', number: '7', activity: 'Step-Response Video, Pre-Lab 7; Experiments: RC and RL Circuits (Lab 7)' }
+...
+  

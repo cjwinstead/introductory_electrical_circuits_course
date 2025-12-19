@@ -1,0 +1,9 @@
+---
+fontsize: 11pt
+documentclass: article
+graphics: true
+geometry:
+  - margin=1in
+header-includes:
+  - \usepackage{palatino}
+...

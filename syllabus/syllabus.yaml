@@ -1,0 +1,42 @@
+---
+homework: |
+  Weekly problems will be assigned from the textbook. They will usually be assigned
+  on Mondays and due the following Monday. Problems should be worked out on engineering
+  paper; writing and diagrams should be clear and legible; final answers should be boxed
+  or underlined (see attached homework template). **In each assignment, you must correctly
+  solve five problems for full credit.** Your first five correct solutions are worth 20
+  points each; you can submit additional correct solutions for 5 points extra credit each.
+  Homework should be scanned and uploaded on Canvas. Late homework is accepted up to one
+  week after the due date with no penalty. Homework can be turned in up to one week late
+  without penalty, or up to two weeks late with a 10% penalty.
+tests: |
+  There will be two midterms and one final exam. Exams will be taken in-class or via the
+  testing center. Students are permitted to bring one 8.5x11 sheet of notes for each midterm,
+  and three sheets for the final.
+labs: |
+  There are seven lab assignments. Each assignment is split into three parts: pre-lab tasks,
+  experimental methods, and post-lab report. Pre-lab tasks and exercises should be completed
+  during the week prior to the lab experiment. Experiments should be conducted during your
+  scheduled lab session unless special permission is granted by the instructor. The post-lab
+  report should be completed as soon as possible after the experiments are done. Approximately
+  two weeks are allocated to each lab assignment.
+grade_policy: |
+  YOU MUST COMPLETE ALL LABS TO PASS THE COURSE. You don't have to get a perfect
+  score, but you do need to perform all of the experiments. Extra credit points
+  will generally be applied within their category, i.e. homework points add to your
+  homework score but cannot make up for a missing lab assignment.
+grade_distribution:
+  - {category: Homework, percent: 30}
+  - {category: Labs, percent: 35}
+  - {category: Exams, percent: 35}
+objectives:
+  - 'Student shall understand circuit fundamentals, including Ohm’s law, Kirchoff’s current and voltage laws, and power conservation laws.'
+  - 'Students shall have the ability to write loop-current and node-voltage equations for arbitrary networks comprised of resistors, capacitors, inductors, dependent and independent sources. They shall be able to solve DC circuits for arbitrary currents and voltages.'
+  - 'Students shall develop the ability to formulate Norton and Thevenin equivalent circuits at an arbitrary one-port circuit interface for arbitrarly complex networks that include dependent and independent sources.'
+  - 'Students shall develop the ability to solve for currents, voltages and power in circuits containing ideal op-amps in inverting, non-inverting, summing and differencing configurations. They shall develop the ability to design op-amp circuits using superposition principles.'
+  - 'Students shall develop the ability to find time constants, initial and final values and the complete responses for first-order RC and RL circuits containing switches, step, or pulse sources.'
+  - 'Shall develop the ability to use lab instruments including oscilloscopes, power supplies, multimeters and function generators.'
+  - 'Shall develop the ability to use circuit simulation and analysis software for DC and transient analysis.'
+
+...
+

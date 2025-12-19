@@ -1,0 +1,55 @@
+---
+title: 'ECE 2250 Lecture Plan'
+startdate: '8/25/2025'
+duration: 16
+summary: 'Student should read the indicated book sections prior to each lecture.'
+holidays:
+  - { date: '9/1/2025', text: 'Labor Day' }
+  - { date: '10/10/2025', text: 'Fall Break' }
+  - { date: '11/26/2025', text: 'Thanksgiving Break' }
+  - { date: '11/28/2025', text: 'Thanksgiving Break' }
+exams:
+  - { date: '9/24/2025', text: 'Midterm 1', covers: '(Ch. 1--3)', time: '' }
+  - { date: '10/29/2025', text: 'Midterm 2', covers: '(Ch. 4)', time: '' }
+  - { date: '12/12/2025', text: 'Final Exam', covers: '(Ch. 1--7)', time: '9:30AM -- 11:20 AM' }
+reading:
+  - { sec: 'Syllabus, 1.1, 1.2', topic: 'Overview, SI units' }
+  - { sec: '1.3 -- 1.5', topic: 'Voltage, Current, Ideal Elements' }
+  - { sec: '1.6, 2.1', topic: 'Power, Energy, Independent Sources' }
+  - { sec: '2.1 -- 2.2', topic: "Dependent Sources, Ohm's Law, Resistance" }
+  - { sec: '2.3 -- 2.4', topic: "Circuit Models, Kirchoff's Laws" }
+  - { sec: '2.5', topic: 'Circuits w/Dependent Sources' }
+  - { sec: 'Circuit Simulation Concepts', topic: 'EveryCircuit, SPICE' }
+  - { sec: '3.1 -- 3.2', topic: 'Series and Parallel Resistors' }
+  - { sec: '3.3 -- 3.4', topic: 'Voltage and Current Dividers' }
+  - { sec: '3.5 -- 3.6', topic: 'Measuring Voltage, Current Resistance; Wheatstone Bridge' }
+  - { sec: '3.7', topic: 'Delta-Wye Transformations' }
+  - { sec: 'Review Ch. 1--3', topic: '' }
+  - { sec: 'Exam 1 Solutions', topic: '' }
+  - { sec: '4.1 -- 4.2', topic: 'Node-Voltage Method' }
+  - { sec: '4.2 -- 4.3', topic: 'Node-Voltage with Dependent Sources' }
+  - { sec: '4.4 -- 4.5', topic: 'Supernodes, Amplifiers, Mesh Current Method' }
+  - { sec: '4.6 -- 4.7', topic: 'Mesh Currents with Dependent Sources, Supermesh, Amplifiers' }
+  - { sec: '4.8', topic: 'Application of Methods' }
+  - { sec: '4.9', topic: 'Source Transformations' }
+  - { sec: '4.10', topic: 'Thevenin and Norton Equivalent Circuits' }
+  - { sec: '4.11', topic: 'Thevenin Equivalent Resistance' }
+  - { sec: '4.12', topic: 'Max Power Transfer' }
+  - { sec: '4.13', topic: 'Principle of Superposition' }
+  - { sec: '4', topic: 'Example Problems' }
+  - { sec: 'Review Ch. 4', topic: '' }
+  - { sec: 'Exam 2 Solutions', topic: '' }
+  - { sec: '5.1 -- 5.2', topic: 'Operational Amplifiers' }
+  - { sec: '5.3 -- 5.4', topic: 'Inverting and Summing Configurations' }
+  - { sec: '5.5 -- 5.7', topic: 'Non-Inverting and Difference Configurations' }
+  - { sec: '6.1', topic: 'Reactive Component, Energy Storage, Inductors' }
+  - { sec: '6.2', topic: 'Capacitors' }
+  - { sec: '6.3', topic: 'Series/Parallel Combinations' }
+  - { sec: '6.4 -- 6.5', topic: 'Mutual Inductance' }
+  - { sec: '7.1 -- 7.2', topic: 'Natural Response of RL and RC circuits.' }
+  - { sec: '7.3', topic: 'Step Response of RL and RC circuits.' }
+  - { sec: '7.4', topic: 'General Solution' }
+  - { sec: '7.5', topic: 'Sequential Switching' }
+  - { sec: '7.6 -- 7.7', topic: 'Unbounded Response, Integrating Amplifier' }
+  - { sec: 'Course Review', topic: '' }
+...

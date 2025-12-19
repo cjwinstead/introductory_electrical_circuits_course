@@ -1,0 +1,39 @@
+
+
+\node[inner sep=1cm] at (0,0) (ckt) {Some Circuit};
+
+\draw (ckt.north west) -- (ckt.north east) -- (ckt.south east) --
+++(0,-2) coordinate (se) -- ++(-2,0) coordinate (s) -- (s |-
+ckt.south) coordinate (m) -- (ckt.south west) -- cycle;
+
+\coordinate (vn) at ($(ckt.south west)!0.1!(ckt.north west)$);
+\coordinate (vp) at ($(ckt.south west)!0.9!(ckt.north west)$);
+
+\coordinate (in) at ($(s)!0.1!(m)$);
+\coordinate (ip) at ($(s)!0.9!(m)$);
+
+\draw[blue] (vn) -- ++(-1,0) coordinate (a) to[voltage source,l=$v_A$] (vp
+-| a) -- (vp)
+(in) -- ++(-1,0) coordinate (a) to[current source,l=$i_B$] (ip
+-| a) -- (ip);
+
+\node[anchor=north west,align=left,yshift=-0.25cm] at ($(s -| vn) +
+(-1,0)$) {
+  Circuit With Multiple {\bf Independent} Sources:\\
+  Solve {\bf partial solutions} for one source at a time,\\
+  set all other independent sources to zero. \\
+  {\bf Combined Solution} is the sum of partial solutions \\
+  for every node and branch.\\~\\
+  Example:\\
+  First: Set $i_B=0$, solve voltages $v_k^\prime$ and currents
+  $i_j^\prime$ in the circuit. \\
+  Next: Set $v_A=0$, solve voltages $v_k^{\prime\prime}$ and currents
+  $i_j^{\prime\prime}$ in the circuit. \\
+  Combine: sum $v_k = v_k^\prime+v_k^{\prime\prime}$ and $i_j=i_j^\prime+i_j^{\prime\prime}$.};
+
+\draw ($(ckt.north east) + (1.75,-1.5)$) to[voltage source,l_={0V$\equiv$}] ++(0,1.5);    
+\draw ($(ckt.north east) + (3,-1.5)$) to[short,l_={short circuit}] ++(0,1.5);    
+
+\draw ($(ckt.north east) + (1.75,-3.5)$) to[current source,l_={0A$\equiv$}] ++(0,1.5);    
+\draw ($(ckt.north east) + (3,-3.5)$) to[open,l_={open circuit}] ++(0,1.5);    
+  

@@ -1,0 +1,17 @@
+
+
+\draw (0,0) node[anchor=east] (a) {A} (a.east) to[short,f=$i_s$] ++(1,0)
+coordinate (al) to[R=$\frac{1}{G_1}$,*-*,f=$i_1$] ++(0,-2)
+coordinate (bl) (al) -- ++(2,0)
+coordinate (ar) to[R=$\frac{1}{G_2}$,f=$i_2$] ++(0,-2)
+coordinate (br) -- (bl)
+to[short,f=$i_s$] ++(-1,0) node[anchor=east] {B};
+
+\node[anchor=north west] at ($(bl)+(0.5,-0.5)$)
+     {$\begin{aligned}
+         i_1 &= i_s\frac{G_1}{G_1+G_2}\\
+         i_2 &= i_s\frac{G_2}{G_1+G_2}
+        \end{aligned}
+         $};
+
+     

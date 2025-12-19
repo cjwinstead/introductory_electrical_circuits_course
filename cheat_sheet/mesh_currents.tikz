@@ -1,0 +1,66 @@
+
+\coordinate (A) at (0,0);
+\coordinate (B) at (2.5,0);
+\coordinate (C) at (2.5,-2.5);
+\coordinate (D) at (0,-2.5);
+\coordinate (E) at (2.5,-5);
+\coordinate (F) at (0,-5);
+
+\draw (A) to[R=$R_1$] (B)
+      (B) to[R=$R_2$] (C)
+      (C) to[R=$R_3$,*-*] (D)
+      (C) to[R=$R_5$] (E)
+      (A) to[R=$R_4$] (D)
+      (D) to[R=$R_7$] (F)
+      (E) to[R=$R_6$] (F);
+
+\foreach \x in {A,B,C,D,E,F} {
+  \node[anchor=south east,blue] at (\x) {\x};
+};
+
+\draw[->,green!50!black] ($(A)!0.50!(C)+(0.5,0)$) arc
+        [
+          start angle=360,
+          end angle=180,
+          x radius=0.5cm,
+          y radius = 0.5cm
+          ];
+\draw[->,green!50!black] ($(A)!0.50!(C)+(-0.5,0)$) arc
+        [
+          start angle=175,
+          end angle=5,
+          x radius=0.5cm,
+          y radius = 0.5cm
+          ];
+
+\node[green!50!black] at ($(A)!0.50!(C)$) {$i_a$};
+
+\draw[->,green!50!black] ($(D)!0.50!(E)+(0.5,0)$) arc
+        [
+          start angle=360,
+          end angle=180,
+          x radius=0.5cm,
+          y radius = 0.5cm
+          ];
+\draw[->,green!50!black] ($(D)!0.50!(E)+(-0.5,0)$) arc
+        [
+          start angle=180,
+          end angle=0,
+          x radius=0.5cm,
+          y radius = 0.5cm
+          ];
+\node[green!50!black] at ($(D)!0.50!(E)$) {$i_b$};
+         
+\node[anchor=north west,align=left] at ($(B)+(1.5,0.5)$) {
+  KVL equation for mesh $a$:\\~\\
+  $\begin{array}{cccccccc}
+    R_1\left(i_a\right)&+&R_2\left(i_a\right)&+&R_3\left(i_a-i_b\right)&+&R_4\left(i_a\right)
+    &= 0\\
+    & & & & i_a\text{~overlaps~} i_b & &  &
+  \end{array}$\\~\\
+  KVL equation for mesh $b$:\\~\\
+  $\begin{array}{cccccccc}
+    R_5\left(i_b\right)&+&R_6\left(i_b\right)&+&R_3\left(i_b-i_a\right)&+&R_7\left(i_b\right)
+    &= 0\\
+    & & & & i_a\text{~overlaps~} i_b & &  &
+    \end{array}$};

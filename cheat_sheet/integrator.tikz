@@ -1,0 +1,17 @@
+
+
+\node[op amp] at (0,0) (oa) {};
+
+\draw (oa.-) to[short,*-] ++(0,1.5) coordinate (f)
+to[C=$C_F$] (f -| oa.out) to[short,-*] (oa.out)
+to[short,-o] ++(1,0) node[anchor=west] {$v_{\rm OUT}$}
+(oa.+) node[ground] {}
+(oa.-) to[R,l_=$R_I$,-o] ++(-2,0) node[anchor=east] {$v_{\rm IN}$};
+
+\node[anchor=north west,align=left] at ($(oa.+)+(-2.5,-0.5)$) {
+  $v_{\rm OUT} = V_I - \frac{1}{R_IC_F}\int_0^tv_{\rm
+    IN}(\tau)d\tau$\\
+  Initial voltage is $V_I$ at time zero.
+  Switch or resistor can be\\ inserted across $C_F$
+  to define initial conditions.
+};

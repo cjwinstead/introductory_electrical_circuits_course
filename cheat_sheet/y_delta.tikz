@@ -1,0 +1,36 @@
+\node[circ,blue,label={[label distance=0.2]40:A}] at (0,0) (a) {};
+\node[circ,blue,label={[label distance=0.2]270:B}] at (-4,-6) (b) {};
+\node[circ,blue,label={[label distance=0.2]270:C}] at (4,-6) (c) {};
+
+\coordinate (ab) at ($(a)!0.5!(b)$);
+\coordinate (ac) at ($(a)!0.5!(c)$);
+\coordinate (bc) at ($(b)!0.5!(c)$);
+
+\node[circ,opacity=0.5,anchor=south west,label={[label distance=0.2]270:Y}] at (barycentric cs:ab=1,bc=1,ac=1) (y) {};
+
+\draw[blue,thick] (a.south) to[R,l_=$R_{AB}$,name=rab] (b.north)
+(a.south) to[R=$R_{AC}$,name=rac] (c.north)
+(b.north) to[R,l_=$R_{BC}$,name=rbc] (c.north);
+
+\draw[opacity=0.5] (a) to[R,l_=$R_{AY}$,name=ray] (y)
+(b) to[R=$R_{BY}$,name=rby] (y)
+(c) to[R,l_=$R_{CY}$,name=rcy] (y);
+
+%% \tikzset{link/.style={dashed,green!50!black,-{Stealth[length=10pt]}}}
+
+%% \draw[link] (rcy.south east) to[out=100,in=20] (rab);
+%% \draw[link] (ray.south east) to[out=200,in=130] (rbc);
+%% \draw[link] (rby.south east) to[out=-30,in=270] (rac);
+
+\node[anchor=west,minimum width=2in,align=left] at ($(y)+(3,1)$) {
+  Denominator: \\
+  $G_Y =G_{AY}+G_{BY}+G_{CY}$
+  ~\\
+  ~\\
+  $
+  \begin{aligned}
+    G_{AB} &= \frac{G_{AY}G_{BY}}{G_{Y}}\\
+    G_{BC} &= \frac{G_{BY}G_{CY}}{G_Y}\\
+    G_{AC} &= \frac{G_{AY}G_{CY}}{G_Y}\\
+  \end{aligned}
+  $};

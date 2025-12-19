@@ -1,0 +1,14 @@
+
+\node[op amp] at (0,0) (oa) {};
+
+\draw (oa.-) to[short,-] ++(0,1) coordinate (f) to[generic,l={Negative
+  Feedback}]
+(f-|oa.out) to[short,-*] (oa.out) to[short,-o] ++(1,0)
+node[anchor=west] {$v_o$} ;
+
+\node[anchor=east] at (oa.-) {$v_n$};
+\node[anchor=east] at (oa.+) {$v_p$};
+
+\node[anchor=north,align=center] at (oa.south) {Virtual Short: $v_n
+  \approx v_p$\\ Open-loop: $v_o=A\left(v_p-v_n\right)$\\ Ideal:
+  $A\rightarrow \infty$};

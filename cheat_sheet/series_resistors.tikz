@@ -1,0 +1,10 @@
+\draw (0,0) node[anchor=south] (a) {A} to[R=$R_1$] ++(0,-2) coordinate
+(c) to[R=$R_2$] ++(0,-2) node[anchor=north] (b) {B};
+
+\node at ($(a)!0.5!(b)+(1,0)$) {$\equiv$};
+
+\draw (a.south) ++(2,0) node[anchor=south] (aeq) {A}
+to[R=$R_{\rm eq}$] (aeq.south |- b.north) node[anchor=north] (beq)
+{B};
+
+\node[anchor=north] at ($(b)!0.5!(beq)+(0,-0.5)$) {$R_{\rm eq} = R_1 + R_2$};
